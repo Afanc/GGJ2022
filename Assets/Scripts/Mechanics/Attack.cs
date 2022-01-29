@@ -16,6 +16,7 @@ public class Attack : MonoBehaviour
 
     public int team;
 
+    public Animator animator;
 
     void Awake()
     {
@@ -30,6 +31,9 @@ public class Attack : MonoBehaviour
                 print("Fuck init attack");
             }
         }
+
+        animator = GetComponent<Animator>();
+        if (animator != null) animator = this.transform.parent.GetComponent<Animator>();
     }
 
 
@@ -68,6 +72,7 @@ public class Attack : MonoBehaviour
         {
             time = 0f;
             hit = false;
+            animator.SetTrigger("attack");
         }
     }
 }
