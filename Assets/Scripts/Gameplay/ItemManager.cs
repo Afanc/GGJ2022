@@ -11,7 +11,6 @@ namespace Platformer.Gameplay
 		public List<string> items = new List<string>(){};
 		public Item[] items_container;
 
-
 		public ItemManager()
 		{
 		}

@@ -62,27 +62,6 @@ namespace Platformer.Mechanics
 			ItemManager = GetComponent<ItemManager>();
         }
 
-		public object this[string name]
-		{
-			get
-			{
-				var properties = GetType()
-						.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-				foreach (var property in properties)
-				{
-					if (property.Name == name && property.CanRead)
-						return property.GetValue(this, null);
-				}
-
-				throw new ArgumentException("Can't find property");
-
-			}
-			set {
-				return;
-			}
-		}
-
 		protected override void Start()
 		{
     	this.maxSpeed = 7;
