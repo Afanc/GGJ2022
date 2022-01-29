@@ -6,14 +6,14 @@ namespace Platformer.Gameplay
 {
 	public class ItemManager : MonoBehaviour
 	{
+		public int whatever = 42;
 		public Dictionary<string, float> stats = new Dictionary<string, float>(){};
 		public List<string> items = new List<string>(){};
 		public Item[] items_container;
 
+
 		public ItemManager()
 		{
-			//Item bottes7lieues = new Item("bottes_de_7_lieues", "maxSpeed", 10);
-			//this.addItem(bottes7lieues);
 		}
 		
 		public float getStat(string stat)
@@ -43,9 +43,9 @@ namespace Platformer.Gameplay
 		// Start is called before the first frame update
 		void Start()
 		{
-			var item_container = UnityEngine.Object.FindObjectsOfType<Item>();
+			items_container = UnityEngine.Object.FindObjectsOfType<Item>();
 			
-			foreach(Item i in item_container)
+			foreach(Item i in items_container)
 			{
 				this.addItem(i);
 			}
