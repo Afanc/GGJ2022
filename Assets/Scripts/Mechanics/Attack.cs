@@ -12,14 +12,38 @@ public class Attack : MonoBehaviour
 
     public float damage = 5.0f;
 
+    public bool hit = false;
+
+    public int team;
+
+
+    void Awake()
+    {
+        var pe = GetComponent<PhysicalEntity>();
+        if (pe != null) team = pe.team;
+        else
+        {
+            pe = this.transform.parent.GetComponent<PhysicalEntity>();
+            if (pe != null) team = pe.team;
+            else
+            {
+                print("Fuck init attack");
+            }
+        }
+    }
+
+
+
     void OnTriggerStay2D(Collider2D other)
     {
-        if (time > timePre && time < timeHit)
+        if (!hit && time > timePre && time < timeHit)
         {
-            print(other);
             var team_player = other.gameObject.GetComponent<PhysicalEntity>();
-            print(team_player);
-            if (team_player != null) print(team_player.team);
+            if (team_player != null && team_player.team != team) 
+            {
+                hit = true;
+                print(team.ToString() + "attack: " + team_player.team.ToString());
+            }
         }
     }
 
@@ -34,7 +58,16 @@ public class Attack : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (Input.GetButtonDown("Attack"))
+        // if (Input.GetButtonDown("Attack"))
+        //     Trigger()
+    }
+
+    public void Trigger()
+    {
+        if (time > timePost)
+        {
             time = 0f;
+            hit = false;
+        }
     }
 }

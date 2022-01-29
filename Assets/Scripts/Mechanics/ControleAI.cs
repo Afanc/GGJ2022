@@ -25,7 +25,7 @@ namespace Platformer.Mechanics
             
         }
 
-        void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerStay2D(Collider2D other)
         {
             var pe = other.gameObject.GetComponent<PhysicalEntity>();
             if (pe != null && pe.team == 0)
