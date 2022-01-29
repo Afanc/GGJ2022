@@ -33,7 +33,7 @@ public class Attack : MonoBehaviour
         }
 
         animator = GetComponent<Animator>();
-        if (animator != null) animator = this.transform.parent.GetComponent<Animator>();
+        if (animator == null) animator = this.transform.parent.GetComponent<Animator>();
     }
 
 
