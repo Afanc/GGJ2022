@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
@@ -15,7 +17,7 @@ namespace Platformer.Mechanics
     public class PlayerController : KinematicObject
     {
 		//public Gameplay.ItemManager ItemManager = gameObject.AddCompotent<ItemManager>();
-		//public ItemManager ItemManager;
+		public ItemManager ItemManager;
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
@@ -23,7 +25,12 @@ namespace Platformer.Mechanics
         /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
-        public float maxSpeed = 7;
+
+		//------------------
+		//faut faire ça pour toutes les propriétés !!
+        public float maxSpeed {get; set;}
+		/// ---------------
+
         /// <summary>
         /// Initial jump velocity at the start of a jump.
         /// </summary>
@@ -51,11 +58,48 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
-			//ItemManager = GetComponent<ItemManager>();
+			ItemManager = GetComponent<ItemManager>();
         }
+
+		public object this[string name]
+		{
+			get
+			{
+				var properties = GetType()
+						.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+				foreach (var property in properties)
+				{
+					if (property.Name == name && property.CanRead)
+						return property.GetValue(this, null);
+				}
+
+				throw new ArgumentException("Can't find property");
+
+			}
+			set {
+				return;
+			}
+		}
+
+		protected override void Start()
+		{
+			this.maxSpeed = 7;
+		}
+
+		public void update_item_properties()
+		{
+			foreach(Item i in ItemManager.items_container)
+			{
+				this.GetType().GetProperty(i.Stat_name).SetValue(this, i.Stat_value);
+			}
+
+		}
 
         protected override void Update()
         {
+			update_item_properties();
+		
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
