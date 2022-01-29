@@ -2,48 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour
+namespace Platformer.Gameplay
 {
-	Dictionary<string, float> stats = new Dictionary<string, float>(){};
-	List<string> items = new List<string>(){};
+	public class ItemManager : MonoBehaviour
+	{
+		public Dictionary<string, float> stats = new Dictionary<string, float>(){};
+		public List<string> items = new List<string>(){};
+		public Item[] items_container;
 
-	public ItemManager()
-	{
-	}
-	
-	public float getStat(string stat)
-	{
-		return stats[stat];
-	}
-
-	public void addItem(Item item)
-	{
-		items.Add(item.Item_name);
-		if (! stats.ContainsKey(item.Stat_name))
+		public ItemManager()
 		{
-			stats.Add(item.Stat_name, item.Stat_value);
+			//Item bottes7lieues = new Item("bottes_de_7_lieues", "maxSpeed", 10);
+			//this.addItem(bottes7lieues);
 		}
-		else 
+		
+		public float getStat(string stat)
 		{
-			stats[item.Stat_name] += item.Stat_value; 
+			return stats[stat];
+		}
+
+		public void addItem(Item item)
+		{
+			items.Add(item.Item_name);
+			if (! stats.ContainsKey(item.Stat_name))
+			{
+				stats.Add(item.Stat_name, item.Stat_value);
+			}
+			else 
+			{
+				stats[item.Stat_name] += item.Stat_value; 
+			}
+		}
+
+		public void removeItem(Item item)
+		{
+			items.Remove(item.Item_name);
+			stats[item.Stat_name] -= item.Stat_value;
+		}
+
+		// Start is called before the first frame update
+		void Start()
+		{
+			var item_container = UnityEngine.Object.FindObjectsOfType<Item>();
+			
+			foreach(Item i in item_container)
+			{
+				this.addItem(i);
+			}
+
+		}
+
+		// Update is called once per frame
+		void Update()
+		{
+			
 		}
 	}
-
-	public void removeItem(Item item)
-	{
-		items.Remove(item.Item_name);
-		stats[item.Stat_name] -= item.Stat_value;
-	}
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

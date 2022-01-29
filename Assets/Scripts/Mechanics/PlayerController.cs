@@ -14,6 +14,8 @@ namespace Platformer.Mechanics
     /// </summary>
     public class PlayerController : KinematicObject
     {
+		//public Gameplay.ItemManager ItemManager = gameObject.AddCompotent<ItemManager>();
+		//public ItemManager ItemManager;
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
@@ -49,6 +51,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+			//ItemManager = GetComponent<ItemManager>();
         }
 
         protected override void Update()
