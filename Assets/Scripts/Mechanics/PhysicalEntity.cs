@@ -31,15 +31,24 @@ namespace Platformer.Mechanics
         {
             if (hp < 0f)
             {
-                if (team == 1) Schedule<EnemyDeath>().enemy = enemy;
+                if (team == 1)
+                {
+                    Schedule<EnemyDeath>().enemy = enemy;
+                    print("enemy die");
+                }
 
-                if (team == 0) Schedule<PlayerDeath>();
+                if (team == 0) 
+                {
+                    Schedule<PlayerDeath>();
+                    print("player die");
+                }
             }
             
         }
 
         public void DoDamage(float damage)
         {
+            print("tak damage");
             hp -= damage;
         }
     }
