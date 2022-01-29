@@ -8,7 +8,7 @@ namespace Platformer.Gameplay
 	public class Item : MonoBehaviour
 	{
 
-		public Button button_1;
+		public Button Fire2;
 		public string Item_name;
 		public string Stat_name;
 		public float Stat_value;
@@ -25,7 +25,8 @@ namespace Platformer.Gameplay
 		void On_Character()
 		{
 			Is_active = 1;
-			transform.position = new Vector2(transform.position.x, transform.position.y + 10);
+			print("fire triggered !");
+			transform.position = new Vector2(transform.position.x, transform.position.y + 1);
 		}
 
 		void In_Storage()
@@ -41,13 +42,14 @@ namespace Platformer.Gameplay
 		// Start is called before the first frame update
 		void Start()
 		{
-			button_1.onClick.AddListener(On_Character);	
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-			print(transform.position.x);
+			//print(transform.position.x);
+			if (Input.GetButtonDown("Attack") && is_in_storage()) On_Character();
+
 		}
 	}
 }
