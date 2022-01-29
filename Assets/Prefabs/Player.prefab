@@ -319,6 +319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+  hp: 50
+  enemy: {fileID: 0}
 --- !u!1 &5554190326946924118
 GameObject:
   m_ObjectHideFlags: 0

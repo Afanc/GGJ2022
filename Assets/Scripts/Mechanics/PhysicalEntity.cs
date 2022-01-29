@@ -31,19 +31,35 @@ namespace Platformer.Mechanics
         {
             if (hp < 0f)
             {
-                if (team == 1)
-                {
-                    Schedule<EnemyDeath>().enemy = enemy;
-                    print("enemy die");
-                }
-
-                if (team == 0) 
-                {
-                    Schedule<PlayerDeath>();
-                    print("player die");
-                }
+                Die();
             }
             
+        }
+
+        public void Die()
+        {
+            if (team == 1)
+            {
+                DestroyEnemy();
+            }
+
+            if (team == 0) 
+            {
+                LostTheGame();
+            }
+        }
+
+        public void DestroyEnemy()
+        {
+            Destroy(gameObject);
+        }
+
+        public void LostTheGame()
+        {
+            print("Lost The Game");
+
+            Destroy(gameObject);
+            // Schedule<PlayerDeath>();
         }
 
         public void DoDamage(float damage)
