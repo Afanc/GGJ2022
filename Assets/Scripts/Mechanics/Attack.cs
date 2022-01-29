@@ -49,7 +49,7 @@ namespace Platformer.Mechanics
                 {
                     hit = true;
                     pe_other.DoDamage(damage);
-                    print(team.ToString() + "attack: " + pe_other.team.ToString());
+                    // print(team.ToString() + "attack: " + pe_other.team.ToString());
                 }
             }
         }
