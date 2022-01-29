@@ -29,12 +29,13 @@ namespace Platformer.Mechanics
 		//------------------
 		//faut faire ça pour toutes les propriétés !!
         public float maxSpeed {get; set;}
+        public float jumpTakeOffSpeed {get; set;}
+        //public Health health {get; set;}
 		/// ---------------
 
         /// <summary>
         /// Initial jump velocity at the start of a jump.
         /// </summary>
-        public float jumpTakeOffSpeed = 7;
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
@@ -84,7 +85,8 @@ namespace Platformer.Mechanics
 
 		protected override void Start()
 		{
-			this.maxSpeed = 7;
+    	this.maxSpeed = 7;
+        this.jumpTakeOffSpeed = 2;
 		}
 
 		public void update_item_properties()
