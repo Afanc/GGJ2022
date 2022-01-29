@@ -12,61 +12,25 @@ namespace Platformer.Gameplay
 {
 
     /// <summary>
-    /// Fired when a Player collides with an Enemy.
+    /// Fired when a Player collides with an Item.
     /// </summary>
-    /// <typeparam name="EnemyCollision"></typeparam>
-    public class PlayerItemCollision: Simulation.Event<PlayerEnemyCollision>
+    /// <typeparam name="ItemCollision"></typeparam>
+    public class PlayerItemCollision: Simulation.Event<PlayerItemCollision>
     {
-        public EnemyController enemy;
+        public Item item;
         public PlayerController player;
 
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
-        public override void Execute()
-        {
-            var willHurtEnemy = player.Bounds.center.y >= enemy.Bounds.max.y;
+		public void OnTriggerEnter(collider Other)
+		{
+			TakeItem();
+		}
 
-            if (willHurtEnemy)
-            {
-                var enemyHealth = enemy.GetComponent<Health>();
-                if (enemyHealth != null)
-                {
-                    enemyHealth.Decrement();
-                    if (!enemyHealth.IsAlive)
-                    {
-                        Schedule<EnemyDeath>().enemy = enemy;
-                        player.Bounce(2);
-                    }
-                    else
-                    {
-                        player.Bounce(7);
-                    }
-                }
-                else
-                {
-                    Schedule<EnemyDeath>().enemy = enemy;
-                    player.Bounce(2);
-                }
-            }
-            else
-            {
-                Schedule<PlayerDeath>();
-            }
+        public void TakeItem()
+        {
+
         }
     }
 }
 
-public class PlayerItemCollision : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}

@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "Assets\\Scripts\\Gameplay\\**/EnemyDeath.cs": true,
+    "Assets\\Scripts\\Gameplay\\**/EnemyDeath.cs.*": true,
+    "Assets\\Scripts\\Gameplay\\**/*.meta": true,
+    "**/*.meta": true
+  }
+}
