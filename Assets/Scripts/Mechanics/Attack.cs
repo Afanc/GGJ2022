@@ -42,11 +42,12 @@ public class Attack : MonoBehaviour
     {
         if (!hit && time > timePre && time < timeHit)
         {
-            var team_player = other.gameObject.GetComponent<PhysicalEntity>();
-            if (team_player != null && team_player.team != team) 
+            var pe_other = other.gameObject.GetComponent<PhysicalEntity>();
+            if (pe_other != null && pe_other.team != team) 
             {
                 hit = true;
-                print(team.ToString() + "attack: " + team_player.team.ToString());
+                pe_other.DoDamage(damage);
+                print(team.ToString() + "attack: " + pe_other.team.ToString());
             }
         }
     }

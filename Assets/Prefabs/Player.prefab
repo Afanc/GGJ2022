@@ -59,7 +59,6 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: 67975c08d56ceb147bad38572d805aa8, type: 3}
   respawnAudio: {fileID: 8300000, guid: e18959d46b63f3c4c8cc020a433cf848, type: 3}
   ouchAudio: {fileID: 8300000, guid: 6c05149e5a2fba64ba172e25a61074b7, type: 3}
-  jumpTakeOffSpeed: 7
   jumpState: 0
   collider2d: {fileID: 0}
   audioSource: {fileID: 0}
@@ -403,12 +402,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5b199af625a361b8a48337c5c7f7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timePre: 0.5
-  timeHit: 0.7
-  timePost: 1.5
+  timePre: 0
+  timeHit: 0.2
+  timePost: 0.5
   time: 2
   damage: 5
+  hit: 0
   team: 0
+  animator: {fileID: 0}
 --- !u!114 &1137326581799548725
 MonoBehaviour:
   m_ObjectHideFlags: 0
