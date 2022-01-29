@@ -10,7 +10,6 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
-            print(" wawawafjedede");
             control = this.transform.parent.GetComponent<AnimationController>();
         }
 
@@ -28,11 +27,9 @@ namespace Platformer.Mechanics
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            print("triggerjedede");
             var pe = other.gameObject.GetComponent<PhysicalEntity>();
             if (pe != null && pe.team == 0)
             {
-                print("jedede");
                 control.move.x = Mathf.Clamp(pe.gameObject.transform.position.x - transform.position.x, -1, 1);
             }
         }
