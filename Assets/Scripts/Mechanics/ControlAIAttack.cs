@@ -10,7 +10,7 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
-            attack = this.transform.parent.GetComponent<Attack>();
+            attack = this.transform.parent.GetComponentInChildren<Attack>();
         }
 
         // Start is called before the first frame update
