@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      float step = 0.002f;
+      float step = 0.0002f;
 
       var cameraPosition = gameObject.transform.position;
       cameraPosition.x += step;
