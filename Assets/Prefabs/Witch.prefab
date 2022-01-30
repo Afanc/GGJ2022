@@ -254,7 +254,8 @@ MonoBehaviour:
   hit: 0
   hitting: 0
   proj: 1
-  proj_prefab: {fileID: 0}
+  proj_prefab: {fileID: 339481384389000463, guid: d273bfc5fbb92534a854e4156a4693c4,
+    type: 3}
   team: 0
   animator: {fileID: 0}
 --- !u!1 &8267793520092837537
