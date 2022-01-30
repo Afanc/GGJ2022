@@ -14,11 +14,13 @@ namespace Platformer.Mechanics
             int play_nbr = 2;
             if (transform.position.y > -5f) play_nbr = 1;
             
-            var players = GameObject.FindGameObjectsWithTag("Player");
+            var players = UnityEngine.Object.FindObjectsOfType<PlayerController>();  
 
-            foreach (GameObject player in players)
+            foreach (PlayerController player in players)
             {
-                print(player.GetComponent<PlayerController>().PlayerNumber);
+                if (play_nbr == player.PlayerNumber) dv = player.transform.position - transform.position;
+                dv.Normalize();
+                dv = dv * 5.0f;
             }
             
         }
