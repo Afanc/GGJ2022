@@ -43,6 +43,7 @@ namespace Platformer.Mechanics
 
         void OnTriggerStay2D(Collider2D other)
         {
+            if (team == 1) print(hit);
             if (!hit && time > timePre && time < timeHit)
             {
                 if (!hitting)
@@ -82,7 +83,7 @@ namespace Platformer.Mechanics
                 time = 0f;
                 hit = false;
                 hitting = false;
-                animator.SetTrigger("startAttack");
+                // animator.SetTrigger("startAttack");
             }
         }
     }

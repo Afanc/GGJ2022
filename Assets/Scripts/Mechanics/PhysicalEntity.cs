@@ -20,7 +20,9 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
-            if (team == 1) enemy = GetComponent<EnemyController>();
+            var player = GetComponent<PlayerController>();
+            if (player) team = 0;
+            else team = 1;
 
             animator = GetComponent<Animator>();
         }
