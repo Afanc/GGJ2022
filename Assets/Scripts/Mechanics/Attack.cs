@@ -18,6 +18,7 @@ namespace Platformer.Mechanics
         public bool hitting = false;
 
         public bool proj = false;
+        public bool is_proj = false;
 
         public GameObject proj_prefab;
 
@@ -27,20 +28,23 @@ namespace Platformer.Mechanics
 
         void Awake()
         {
-            var pe = GetComponent<PhysicalEntity>();
-            if (pe != null) team = pe.team;
-            else
+            if (!is_proj)
             {
-                pe = this.transform.parent.GetComponent<PhysicalEntity>();
+                var pe = GetComponent<PhysicalEntity>();
                 if (pe != null) team = pe.team;
                 else
                 {
-                    print("Fuck init attack");
+                    pe = this.transform.parent.GetComponent<PhysicalEntity>();
+                    if (pe != null) team = pe.team;
+                    else
+                    {
+                        print("Fuck init attack");
+                    }
                 }
-            }
 
-            animator = GetComponent<Animator>();
-            if (animator == null) animator = this.transform.parent.GetComponent<Animator>();
+                animator = GetComponent<Animator>();
+                if (animator == null) animator = this.transform.parent.GetComponent<Animator>();
+            }
         }
 
 
@@ -49,7 +53,7 @@ namespace Platformer.Mechanics
         {
             if (!hit && time > timePre && time < timeHit)
             {
-                if (!hitting)
+                if (!hitting && !is_proj)
                 {
                     animator.SetTrigger("attack");
                     hitting = true;
@@ -59,6 +63,7 @@ namespace Platformer.Mechanics
                 {
                     hit = true;
                     pe_other.DoDamage(damage);
+                    if (is_proj) Destroy(gameObject);
                     // print(team.ToString() + "attack: " + pe_other.team.ToString());
                 }
             }
@@ -77,23 +82,25 @@ namespace Platformer.Mechanics
             time += Time.deltaTime;
             // if (Input.GetButtonDown("Attack"))
             //     Trigger()
+
+            if (is_proj && time > timePost) Destroy(gameObject);
         }
 
         public void Trigger()
         {
             if (time > timePost)
             {
-                time = 0f;
-                if (team >= 1) animator.SetTrigger("startAttack");
                 if (proj)
                 {
                     Instantiate(proj_prefab, transform.position, Quaternion.identity);
                 }
                 else
                 {
-                hit = false;
-                hitting = false;
+                    hit = false;
+                    hitting = false;
                 }
+                time = 0f;
+                if (team >= 1) animator.SetTrigger("startAttack");
             }
         }
     }
