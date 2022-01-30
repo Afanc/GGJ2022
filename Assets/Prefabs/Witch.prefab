@@ -48,7 +48,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 6
 --- !u!114 &3956734300083011954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 5
 --- !u!50 &2797511644709713418
 Rigidbody2D:
   serializedVersion: 4
@@ -205,7 +205,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7588860414151100253}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -253,6 +253,10 @@ MonoBehaviour:
   damage: 5
   hit: 0
   hitting: 0
+  proj: 1
+  is_proj: 0
+  proj_prefab: {fileID: 339481384389000463, guid: d273bfc5fbb92534a854e4156a4693c4,
+    type: 3}
   team: 0
   animator: {fileID: 0}
 --- !u!1 &8267793520092837537
@@ -518,7 +522,7 @@ MonoBehaviour:
   hp: 10
   enemy: {fileID: 0}
   animator: {fileID: 0}
-  corpse_prefab: {fileID: 6560871630445528149, guid: d6cd022072e6b5847bf27e6943e95a09,
+  corpse_prefab: {fileID: 7748276770296678242, guid: 9c79b68b9c50dcf468ea328d945717a1,
     type: 3}
 --- !u!58 &6477423838453351742
 CircleCollider2D:

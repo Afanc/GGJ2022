@@ -323,7 +323,7 @@ MonoBehaviour:
   hp: 50
   enemy: {fileID: 0}
   animator: {fileID: 0}
-  corpse_prefab: {fileID: 6560871630445528149, guid: d6cd022072e6b5847bf27e6943e95a09,
+  corpse_prefab: {fileID: 6726897168884368312, guid: 1c449b495bad6d14299aa29a96d12c5f,
     type: 3}
 --- !u!1 &5554190326946924118
 GameObject:
@@ -415,6 +415,9 @@ MonoBehaviour:
   damage: 5
   hit: 0
   hitting: 0
+  proj: 0
+  is_proj: 0
+  proj_prefab: {fileID: 0}
   team: 0
   animator: {fileID: 0}
 --- !u!114 &1137326581799548725
