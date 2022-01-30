@@ -9,8 +9,10 @@ namespace Platformer.Gameplay
 	{
 
 		public string Item_name;
-		public string Stat_name;
-		public float Stat_value;
+		public string Stat_name1;
+		public string Stat_name2;
+		public float Stat_value1;
+		public float Stat_value2;
 		public int Is_active; 
 		public int Is_selected;
 		public int item_index; 
@@ -29,11 +31,6 @@ namespace Platformer.Gameplay
 		bool is_in_storage()
 		{
 			return Is_active == 0; 
-		}
-
-		void SwitchItemSelection()
-		{
-
 		}
 
 		// Start is called before the first frame update
