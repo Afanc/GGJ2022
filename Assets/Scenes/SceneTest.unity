@@ -449,7 +449,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: a3d0096ff6fd0b2f7b1481cd726cdfa7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
 --- !u!1001 &691592554
@@ -1483,6 +1483,7 @@ MonoBehaviour:
   Stat_name: jumpTakeOffSpeed
   Stat_value: 10
   Is_active: 0
+  Is_selected: 0
 --- !u!212 &1862008275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1699,6 +1700,7 @@ MonoBehaviour:
   Stat_name: maxSpeed
   Stat_value: 5
   Is_active: 0
+  Is_selected: 0
 --- !u!212 &2001049478
 SpriteRenderer:
   m_ObjectHideFlags: 0
