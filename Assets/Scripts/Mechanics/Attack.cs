@@ -92,7 +92,8 @@ namespace Platformer.Mechanics
             {
                 if (proj)
                 {
-                    Instantiate(proj_prefab, transform.position, Quaternion.identity);
+                    GameObject projobject = Instantiate(proj_prefab, transform.position, Quaternion.identity);
+
                 }
                 else
                 {

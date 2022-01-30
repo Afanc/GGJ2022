@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class projcontrol : MonoBehaviour
 {
-    public Vector3 dv = new Vector3(0.1f, 0, 0);
+    public Vector3 dv = new Vector3(-115.1f, 0.2f, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,6 @@ public class projcontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       transform.position += dv;
+       transform.position += dv * Time.deltaTime;
     }
 }

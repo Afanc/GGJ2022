@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2883527680701587588}
   - component: {fileID: 3593998130112282418}
   - component: {fileID: 8372005335074158820}
-  - component: {fileID: 3701753494394161658}
   - component: {fileID: 2723011150302371988}
   - component: {fileID: 7903725660711297004}
+  - component: {fileID: 7089734995436723790}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7284664b1aa4f45f0a118f80f5ec1349, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339481384389000463}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5b199af625a361b8a48337c5c7f7a8, type: 3}
   m_Name: 
@@ -110,19 +110,6 @@ MonoBehaviour:
   proj_prefab: {fileID: 0}
   team: 1
   animator: {fileID: 0}
---- !u!114 &3701753494394161658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339481384389000463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ed543fb65b1c325b717188e1315ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dv: {x: 0.1, y: 0, z: 0}
 --- !u!50 &2723011150302371988
 Rigidbody2D:
   serializedVersion: 4
@@ -159,4 +146,17 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 0.6
+--- !u!114 &7089734995436723790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339481384389000463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ed543fb65b1c325b717188e1315ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dv: {x: -4, y: 0.2, z: 0}
