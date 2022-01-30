@@ -354,6 +354,8 @@ MonoBehaviour:
   hp: 10
   enemy: {fileID: 0}
   animator: {fileID: 0}
+  corpse_prefab: {fileID: 6560871630445528149, guid: d6cd022072e6b5847bf27e6943e95a09,
+    type: 3}
 --- !u!58 &4344065152386785375
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ namespace Platformer.Mechanics
 
         public Animator animator;
 
+        public GameObject corpse_prefab;
+
         void Awake()
         {
             var player = GetComponent<PlayerController>();
@@ -44,6 +46,7 @@ namespace Platformer.Mechanics
 
         public void Die()
         {
+            Instantiate(corpse_prefab, transform.position, Quaternion.identity);
             if (team == 1)
             {
                 DestroyEnemy();

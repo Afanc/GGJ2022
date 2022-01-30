@@ -55,6 +55,7 @@ MonoBehaviour:
   minGroundNormalY: 0.9
   gravityModifier: 1
   velocity: {x: 0, y: 0}
+  PlayerNumber: 0
   ItemManager: {fileID: 0}
   jumpAudio: {fileID: 8300000, guid: 67975c08d56ceb147bad38572d805aa8, type: 3}
   respawnAudio: {fileID: 8300000, guid: e18959d46b63f3c4c8cc020a433cf848, type: 3}
@@ -321,6 +322,9 @@ MonoBehaviour:
   team: 0
   hp: 50
   enemy: {fileID: 0}
+  animator: {fileID: 0}
+  corpse_prefab: {fileID: 6560871630445528149, guid: d6cd022072e6b5847bf27e6943e95a09,
+    type: 3}
 --- !u!1 &5554190326946924118
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +414,7 @@ MonoBehaviour:
   time: 2
   damage: 5
   hit: 0
+  hitting: 0
   team: 0
   animator: {fileID: 0}
 --- !u!114 &1137326581799548725
