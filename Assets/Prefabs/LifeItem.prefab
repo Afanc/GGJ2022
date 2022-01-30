@@ -96,10 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item_name: Coeur
-  Stat_name1: 
-  Stat_name2: 
-  Stat_value1: 0
-  Stat_value2: 0
+  Stat_name1: maxJumpTakeOffSpeed1
+  Stat_name2: maxJumpTakeOffSpeed2
+  Stat_value1: 10
+  Stat_value2: 1
   Is_active: 0
-  Is_selected: 1
+  Is_selected: 0
   item_index: 2

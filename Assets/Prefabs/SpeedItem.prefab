@@ -95,11 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe7b6bc4abdbc4fbf7aadd3cdde5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item_name: Pute
-  Stat_name1: 
-  Stat_name2: 
-  Stat_value1: 0
-  Stat_value2: 0
+  Item_name: Coeur
+  Stat_name1: maxSpeed1
+  Stat_name2: maxSpeed2
+  Stat_value1: 5
+  Stat_value2: 2
   Is_active: 0
-  Is_selected: 0
+  Is_selected: 1
   item_index: 1
