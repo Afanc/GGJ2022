@@ -29,8 +29,17 @@ namespace Platformer.Mechanics
 
 		//------------------
 		//faut faire ça pour toutes les propriétés !!
-        public float maxSpeed {get; set;}
-        public float jumpTakeOffSpeed {get; set;}
+        public float maxSpeed1 {get; set;}
+        public float maxSpeed2 {get; set;}
+        public float jumpTakeOffSpeed1 {get; set;}
+        public float jumpTakeOffSpeed2 {get; set;}
+        
+        public float basemaxSpeed1 {get; set;} 
+        public float basemaxSpeed2 {get; set;}
+        public float basejumpTakeOffSpeed1 {get; set;}
+        public float basejumpTakeOffSpeed2 {get; set;}
+
+
         //public Health health {get; set;}
 		/// ---------------
 
@@ -65,17 +74,35 @@ namespace Platformer.Mechanics
 
 		protected override void Start()
 		{
-    	this.maxSpeed = 2;
-        this.jumpTakeOffSpeed = 2;
+        this.basemaxSpeed1 = 2f;
+        this.basemaxSpeed2 = 2f;
+        this.basejumpTakeOffSpeed1 = 2f;
+        this.basejumpTakeOffSpeed2 = 2f;
+    	this.maxSpeed1 = basemaxSpeed1;
+        this.maxSpeed2 = basemaxSpeed2;
+        this.jumpTakeOffSpeed1 = basejumpTakeOffSpeed1;
+        this.jumpTakeOffSpeed2 = basejumpTakeOffSpeed2;
 		}
 
 		public void update_item_properties()
 		{
 			foreach(Item i in ItemManager.items_container)
 			{
-				this.GetType().GetProperty(i.Stat_name).SetValue(this, i.Stat_value);
-			}
-
+                if (i.Is_active == 1)
+                {
+                    string basename = "base"+i.Stat_name2;
+                    var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
+	    			this.GetType().GetProperty(i.Stat_name1).SetValue(this, i.Stat_value1);
+                    this.GetType().GetProperty(i.Stat_name2).SetValue(this, basevalue);
+                }
+                else
+                {
+                    string basename = "base"+i.Stat_name1;
+                    var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
+                    this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value2);
+                    this.GetType().GetProperty(i.Stat_name1).SetValue(this, basevalue);
+                }
+            }
 		}
 
         protected override void Update()
@@ -135,7 +162,7 @@ namespace Platformer.Mechanics
         {
             if (jump && IsGrounded)
             {
-                velocity.y = jumpTakeOffSpeed * model.jumpModifier;
+                velocity.y = jumpTakeOffSpeed1 * model.jumpModifier;
                 jump = false;
             }
             else if (stopJump)
@@ -153,9 +180,9 @@ namespace Platformer.Mechanics
                 spriteRenderer.flipX = true;
 
             animator.SetBool("grounded", IsGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed1);
 
-            targetVelocity = move * maxSpeed;
+            targetVelocity = move * maxSpeed1;
         }
 
         public enum JumpState

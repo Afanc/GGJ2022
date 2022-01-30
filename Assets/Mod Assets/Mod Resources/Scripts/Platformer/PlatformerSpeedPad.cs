@@ -18,10 +18,13 @@ public class PlatformerSpeedPad : MonoBehaviour
     }
 
     IEnumerator PlayerModifier(PlayerController player, float lifetime){
-        var initialSpeed = player.maxSpeed;
-        player.maxSpeed = maxSpeed;
+        var initialSpeed1 = player.maxSpeed1;
+        var initialSpeed2 = player.maxSpeed2;
+        player.maxSpeed1 = maxSpeed;
+        player.maxSpeed2 = maxSpeed;
         yield return new WaitForSeconds(lifetime);
-        player.maxSpeed = initialSpeed;
+        player.maxSpeed1 = initialSpeed1;
+        player.maxSpeed2 = initialSpeed2;
     }
 
 }
