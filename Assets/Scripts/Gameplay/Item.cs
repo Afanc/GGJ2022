@@ -13,6 +13,7 @@ namespace Platformer.Gameplay
 		public string Stat_name;
 		public float Stat_value;
 		public int Is_active; 
+		public int Is_selected;
 
 		public Item(string item_name, string stat_name, float stat_value)
 		{
@@ -20,6 +21,7 @@ namespace Platformer.Gameplay
 			Stat_name = stat_name;
 			Stat_value = stat_value;
 			Is_active = 0;
+			Is_selected = 0;
 		}
 
 		void On_Character()
