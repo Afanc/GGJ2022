@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,10 +52,24 @@ namespace Platformer.Gameplay
 
 		}
 
+		void SwitchItemSelection()
+		{
+			for (; index < items_container.Length; index++)
+			{
+				if (items_container[index].Is_selected == 1)	
+				{
+					
+				}
+			}
+			int current_item = Array.IndexOf(items_container.FindIndex(i => i.Is_selected == 1), ";");
+			//items_container[current_item].Is_selected = 0;
+			//items_container[current_item + 1 % 2] = 1;
+		}
+
 		// Update is called once per frame
 		void Update()
 		{
-			
+			if (Input.GetButtonDown("SwitchBtwnItems")) SwitchItemSelection();
 		}
 	}
 }
