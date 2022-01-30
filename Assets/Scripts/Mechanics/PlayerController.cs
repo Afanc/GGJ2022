@@ -92,20 +92,34 @@ namespace Platformer.Mechanics
                 {
                     if (this.PlayerNumber == 1)
                     {
-                        string basename = "base"+i.Stat_name2;
-                        var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
+                        //string basename = "base"+i.Stat_name2;
+                        //var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
 	    			    this.GetType().GetProperty(i.Stat_name1).SetValue(this, i.Stat_value1);
-                        this.GetType().GetProperty(i.Stat_name2).SetValue(this, basevalue);
+                        //this.GetType().GetProperty(i.Stat_name2).SetValue(this, basevalue);
+                    }
+                    if (this.PlayerNumber == 2)
+                    {
+                        //string basename = "base"+i.Stat_name2;
+                        //var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
+                        //this.GetType().GetProperty(i.Stat_name1).SetValue(this, i.Stat_value1);
+                        this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value2);
                     }
                 }
-                else
+                if (i.Is_active == 0)
                 {
+                    if (this.PlayerNumber == 2)
+                    {
+                        //string basename = "base"+i.Stat_name1;
+                        //var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
+                        this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value1);
+                        //this.GetType().GetProperty(i.Stat_name1).SetValue(this, basevalue);
+                    }
                     if (this.PlayerNumber == 1)
                     {
-                        string basename = "base"+i.Stat_name1;
-                        var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
-                        this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value2);
-                        this.GetType().GetProperty(i.Stat_name1).SetValue(this, basevalue);
+                        //string basename = "base"+i.Stat_name1;
+                        //var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
+                        //this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value2);
+                        this.GetType().GetProperty(i.Stat_name1).SetValue(this, i.Stat_value2);
                     }
                 }
             }

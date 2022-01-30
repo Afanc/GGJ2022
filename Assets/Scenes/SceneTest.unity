@@ -5871,6 +5871,11 @@ PrefabInstance:
       propertyPath: Is_selected
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3743405725167847853, guid: 15cf067866c4c804dad1bfc06066160a,
+        type: 3}
+      propertyPath: Stat_value2
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15cf067866c4c804dad1bfc06066160a, type: 3}
 --- !u!1001 &5011243305331021031
@@ -6031,12 +6036,12 @@ PrefabInstance:
     - target: {fileID: 6997711830693400073, guid: acf433048eb4d654890804fc2e1cbe9d,
         type: 3}
       propertyPath: Stat_value1
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6997711830693400073, guid: acf433048eb4d654890804fc2e1cbe9d,
         type: 3}
       propertyPath: Stat_value2
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6997711830693400074, guid: acf433048eb4d654890804fc2e1cbe9d,
         type: 3}
