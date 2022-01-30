@@ -44,11 +44,7 @@ namespace Platformer.Gameplay
 		// Update is called once per frame
 		void Update()
 		{
-			//print(transform.position.x);
-			if (Input.GetButtonDown("ToggleItem")) print("fuckthishit");
 			if (Input.GetButtonDown("ToggleItem") && Is_selected == 1) ToggleItem();
-			if (Input.GetButtonDown("SwitchBtwnItems")) SwitchItemSelection();
-
 		}
 	}
 }
