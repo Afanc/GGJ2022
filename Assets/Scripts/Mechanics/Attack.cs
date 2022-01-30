@@ -15,6 +15,7 @@ namespace Platformer.Mechanics
         public float damage = 5.0f;
 
         public bool hit = false;
+        public bool hitting = false;
 
         public int team;
 
@@ -44,6 +45,11 @@ namespace Platformer.Mechanics
         {
             if (!hit && time > timePre && time < timeHit)
             {
+                if (!hitting)
+                {
+                    animator.SetTrigger("attack");
+                    hitting = true;
+                }
                 var pe_other = other.gameObject.GetComponent<PhysicalEntity>();
                 if (pe_other != null && pe_other.team != team) 
                 {
@@ -75,7 +81,8 @@ namespace Platformer.Mechanics
             {
                 time = 0f;
                 hit = false;
-                animator.SetTrigger("attack");
+                hitting = false;
+                animator.SetTrigger("startAttack");
             }
         }
     }

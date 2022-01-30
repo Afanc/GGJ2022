@@ -88,6 +88,7 @@ MonoBehaviour:
   time: 2
   damage: 5
   hit: 0
+  hitting: 0
   team: 0
   animator: {fileID: 0}
 --- !u!1 &1661912868639658944
@@ -352,6 +353,7 @@ MonoBehaviour:
   team: 1
   hp: 10
   enemy: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!58 &4344065152386785375
 CircleCollider2D:
   m_ObjectHideFlags: 0
