@@ -16,9 +16,13 @@ namespace Platformer.Mechanics
 
         public EnemyController enemy;
 
+        public Animator animator;
+
         void Awake()
         {
             if (team == 1) enemy = GetComponent<EnemyController>();
+
+            animator = GetComponent<Animator>();
         }
 
         void Start()
@@ -65,6 +69,8 @@ namespace Platformer.Mechanics
         public void DoDamage(float damage)
         {
             print("tak damage");
+
+            animator.SetTrigger("hurt");
             hp -= damage;
         }
     }
