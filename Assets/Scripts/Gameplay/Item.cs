@@ -8,28 +8,17 @@ namespace Platformer.Gameplay
 	public class Item : MonoBehaviour
 	{
 
-		public Button Fire2;
 		public string Item_name;
 		public string Stat_name;
 		public float Stat_value;
 		public int Is_active; 
 		public int Is_selected;
+		public int item_index; 
 
-		public Item(string item_name, string stat_name, float stat_value)
+		void ToggleItem()
 		{
-			Item_name = item_name;
-			Stat_name = stat_name;
-			Stat_value = stat_value;
-			Is_active = 0;
-			Is_selected = 0;
-		}
-
-		void On_Character()
-		{
-			Is_active = 1;
-			print("fire triggered !");
-			print(transform.position.y);
-			transform.position = new Vector2(transform.position.x, transform.position.y + 20.65f);
+			Is_active = 1 - Is_active;
+			transform.position = new Vector2(transform.position.x, transform.position.y + (Is_active*2 - 1)*20.65f);
 		}
 
 		void In_Storage()
@@ -42,6 +31,11 @@ namespace Platformer.Gameplay
 			return Is_active == 0; 
 		}
 
+		void SwitchItemSelection()
+		{
+
+		}
+
 		// Start is called before the first frame update
 		void Start()
 		{
@@ -51,7 +45,10 @@ namespace Platformer.Gameplay
 		void Update()
 		{
 			//print(transform.position.x);
-			if (Input.GetButtonDown("Attack") && is_in_storage()) On_Character();
+			if (Input.GetButtonDown("ToggleItem")) print("fuckthishit");
+			if (Input.GetButtonDown("ToggleItem") && Is_selected == 1) ToggleItem();
+			if (Input.GetButtonDown("ToggleItem") && Is_selected == 1) print("sahiesahtneoiasouhi");
+			if (Input.GetButtonDown("SwitchBtwnItems")) SwitchItemSelection();
 
 		}
 	}

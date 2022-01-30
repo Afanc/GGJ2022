@@ -1504,12 +1504,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe7b6bc4abdbc4fbf7aadd3cdde5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fire2: {fileID: 0}
   Item_name: Coeur
   Stat_name: jumpTakeOffSpeed
   Stat_value: 10
   Is_active: 0
   Is_selected: 0
+  item_index: 1
 --- !u!212 &1862008275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1721,12 +1721,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe7b6bc4abdbc4fbf7aadd3cdde5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fire2: {fileID: 0}
   Item_name: Pute
   Stat_name: maxSpeed
   Stat_value: 5
   Is_active: 0
-  Is_selected: 0
+  Is_selected: 1
+  item_index: 0
 --- !u!212 &2001049478
 SpriteRenderer:
   m_ObjectHideFlags: 0
