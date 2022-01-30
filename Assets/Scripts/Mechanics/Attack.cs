@@ -82,7 +82,7 @@ namespace Platformer.Mechanics
                 time = 0f;
                 hit = false;
                 hitting = false;
-                animator.SetTrigger("startAttack");
+                if (team >= 1) animator.SetTrigger("startAttack");
             }
         }
     }
