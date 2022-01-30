@@ -2993,7 +2993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862008272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.52, y: -2.35, z: 0}
+  m_LocalPosition: {x: 31.96, y: -10.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1852885735}
@@ -3015,8 +3015,8 @@ MonoBehaviour:
   Stat_name: jumpTakeOffSpeed
   Stat_value: 10
   Is_active: 0
-  Is_selected: 0
-  item_index: 0
+  Is_selected: 1
+  item_index: 2
 --- !u!212 &1862008275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3292,7 +3292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001049475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.17, y: -3.38, z: 0}
+  m_LocalPosition: {x: 33.48, y: -10.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1852885735}
@@ -3314,7 +3314,7 @@ MonoBehaviour:
   Stat_name: maxSpeed
   Stat_value: 5
   Is_active: 0
-  Is_selected: 1
+  Is_selected: 0
   item_index: 1
 --- !u!212 &2001049478
 SpriteRenderer:

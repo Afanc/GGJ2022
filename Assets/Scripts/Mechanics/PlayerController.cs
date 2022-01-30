@@ -17,6 +17,7 @@ namespace Platformer.Mechanics
     public class PlayerController : KinematicObject
     {
 		//public Gameplay.ItemManager ItemManager = gameObject.AddCompotent<ItemManager>();
+        public int PlayerNumber; 
 		public ItemManager ItemManager;
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
@@ -64,7 +65,7 @@ namespace Platformer.Mechanics
 
 		protected override void Start()
 		{
-    	this.maxSpeed = 7;
+    	this.maxSpeed = 2;
         this.jumpTakeOffSpeed = 2;
 		}
 
