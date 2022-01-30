@@ -26,7 +26,8 @@ namespace Platformer.Gameplay
 		{
 			Is_active = 1;
 			print("fire triggered !");
-			transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+			print(transform.position.y);
+			transform.position = new Vector2(transform.position.x, transform.position.y + 20.65f);
 		}
 
 		void In_Storage()
