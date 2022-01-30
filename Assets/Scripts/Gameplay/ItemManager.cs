@@ -54,16 +54,18 @@ namespace Platformer.Gameplay
 
 		void SwitchItemSelection()
 		{
+			/*
+			int index = 0;
 			for (; index < items_container.Length; index++)
 			{
 				if (items_container[index].Is_selected == 1)	
 				{
-					
+					items_container[index].Is_selected == 0;
+					items_container[index + 1 %2] == 1;
+					break;
 				}
 			}
-			int current_item = Array.IndexOf(items_container.FindIndex(i => i.Is_selected == 1), ";");
-			//items_container[current_item].Is_selected = 0;
-			//items_container[current_item + 1 % 2] = 1;
+			*/
 		}
 
 		// Update is called once per frame
