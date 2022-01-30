@@ -449,7 +449,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: a3d0096ff6fd0b2f7b1481cd726cdfa7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
 --- !u!1001 &691592554
@@ -1478,12 +1478,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe7b6bc4abdbc4fbf7aadd3cdde5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fire2: {fileID: 0}
   Item_name: Coeur
   Stat_name: jumpTakeOffSpeed
   Stat_value: 10
   Is_active: 0
-  Is_selected: 1
-  item_index: 0
+  Is_selected: 0
 --- !u!212 &1862008275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1695,12 +1695,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe7b6bc4abdbc4fbf7aadd3cdde5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fire2: {fileID: 0}
   Item_name: Pute
   Stat_name: maxSpeed
   Stat_value: 5
   Is_active: 0
   Is_selected: 0
-  item_index: 1
 --- !u!212 &2001049478
 SpriteRenderer:
   m_ObjectHideFlags: 0
