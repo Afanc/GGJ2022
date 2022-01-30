@@ -92,34 +92,22 @@ namespace Platformer.Mechanics
                 {
                     if (this.PlayerNumber == 1)
                     {
+                        print("yes1");
                         string basename = "base"+i.Stat_name2;
                         var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
 	    			    this.GetType().GetProperty(i.Stat_name1).SetValue(this, i.Stat_value1);
                         this.GetType().GetProperty(i.Stat_name2).SetValue(this, basevalue);
                     }
-                    else
-                    {
-                        string basename = "base"+i.Stat_name1;
-                        var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
-	    			    this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value2);
-                        this.GetType().GetProperty(i.Stat_name1).SetValue(this, basevalue);
-                    }
                 }
                 else
                 {
-                    if (this.PlayerNumber == 2)
+                    if (this.PlayerNumber == 1)
                     {
+                        print("yes3");
                         string basename = "base"+i.Stat_name1;
                         var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
                         this.GetType().GetProperty(i.Stat_name2).SetValue(this, i.Stat_value2);
                         this.GetType().GetProperty(i.Stat_name1).SetValue(this, basevalue);
-                    }
-                    else
-                    {
-                        string basename = "base"+i.Stat_name2;
-                        var basevalue = this.GetType().GetProperty(basename).GetValue(this, null);
-                        this.GetType().GetProperty(i.Stat_name1).SetValue(this, i.Stat_value1);
-                        this.GetType().GetProperty(i.Stat_name2).SetValue(this, basevalue);
                     }
                 }
             }
