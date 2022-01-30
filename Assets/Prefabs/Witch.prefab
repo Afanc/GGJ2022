@@ -253,6 +253,8 @@ MonoBehaviour:
   damage: 5
   hit: 0
   hitting: 0
+  proj: 1
+  proj_prefab: {fileID: 0}
   team: 0
   animator: {fileID: 0}
 --- !u!1 &8267793520092837537

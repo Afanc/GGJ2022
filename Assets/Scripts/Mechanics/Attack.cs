@@ -17,6 +17,10 @@ namespace Platformer.Mechanics
         public bool hit = false;
         public bool hitting = false;
 
+        public bool proj = false;
+
+        public GameObject proj_prefab;
+
         public int team;
 
         public Animator animator;
@@ -80,9 +84,16 @@ namespace Platformer.Mechanics
             if (time > timePost)
             {
                 time = 0f;
+                if (team >= 1) animator.SetTrigger("startAttack");
+                if (proj)
+                {
+                    Instantiate(proj_prefab, transform.position, Quaternion.identity);
+                }
+                else
+                {
                 hit = false;
                 hitting = false;
-                if (team >= 1) animator.SetTrigger("startAttack");
+                }
             }
         }
     }
