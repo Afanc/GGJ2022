@@ -20,7 +20,7 @@ namespace Platformer.Gameplay
 		void ToggleItem()
 		{
 			Is_active = 1 - Is_active;
-			transform.position = new Vector2(transform.position.x, transform.position.y + (Is_active*2 - 1)*20.65f);
+			transform.position = new Vector2(transform.position.x, transform.position.y + (Is_active*2 - 1)*7.65f);
 		}
 
 		void In_Storage()
